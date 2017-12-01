@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 
 const App = () => {
     return (
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
             <Switch>
                 <Route exact path={`/`} component={MainPage} />
                 <Route exact path={`/items`} component={MainPage} />
