@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 import Comment from './Comment';
 
@@ -10,7 +11,7 @@ class Comments extends Component {
         return (
             <ol className="comments">
                 {
-                    comments.length !== 0 ? comments.map(comment => {
+                    !_.isEmpty(comments) ? comments.map(comment => {
                         return (
                             <Comment
                                 key={comment.id}
@@ -25,7 +26,7 @@ class Comments extends Component {
     }
 }
 
-Comments.PropTypes = {
+Comments.propTypes = {
     comments: PropTypes.array,
 };
 

@@ -25,7 +25,7 @@ class Comment extends Component {
     }
 }
 
-Comment.PropTypes = {
+Comment.propTypes = {
     id: PropTypes.number,
     text: PropTypes.string,
     color: PropTypes.string

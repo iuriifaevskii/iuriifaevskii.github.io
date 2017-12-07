@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 
 import CreateItem from './CreateItem';
 
+import {
+    getItemsFromLocalStorage,
+    setItemsToLocalStorage
+} from '../../localStorage';
+
 class NewItemPage extends Component {
     state = {
         items: []
     };
 
     componentDidMount() {
-        const items = JSON.parse(localStorage.getItem('items'));
+        const items = getItemsFromLocalStorage();
 
         if (items) {
             this.setState({ items });
@@ -24,7 +29,7 @@ class NewItemPage extends Component {
             commentCount: 0,
         });
 
-        localStorage.setItem('items', JSON.stringify(items));
+        setItemsToLocalStorage(items);
 
         this.props.history.push('/items');
     };

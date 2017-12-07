@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 import Items from './Items';
 
+import {
+    getItemsFromLocalStorage,
+    getCommentsFromLocalStorage,
+    setCommentsToLocalStorage,
+    setItemsToLocalStorage
+} from '../../localStorage';
+
 class MainPage extends Component {
     state = {
         items: [],
@@ -11,13 +18,13 @@ class MainPage extends Component {
     }
 
     componentDidMount() {
-        const items = JSON.parse(localStorage.getItem('items'));
-        const comments = JSON.parse(localStorage.getItem('comments'));
+        const items = getItemsFromLocalStorage();
+        const comments = getCommentsFromLocalStorage();
         
         if (items) {
             this.setState({ items });
         }
-
+        
         if (comments) {
             this.setState({ comments });
         }
@@ -27,7 +34,7 @@ class MainPage extends Component {
         const items = this.state.items.filter(item => item.id !== id);
         this.setState({ items });
         
-        localStorage.setItem('items', JSON.stringify(items));
+        setItemsToLocalStorage(items);
         
         this.removeCommentsItem(id);
     }
@@ -36,7 +43,7 @@ class MainPage extends Component {
         const { comments } = this.state;
         const newComments = comments.filter(comment => +comment.itemId !== itemId);
         
-        localStorage.setItem('comments', JSON.stringify(newComments));
+        setCommentsToLocalStorage(newComments);
 
         this.setState({ comments: newComments })
     }

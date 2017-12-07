@@ -61,9 +61,9 @@ class CreateComment extends Component {
     }
 }
 
-CreateComment.PropTypes = {
+CreateComment.propTypes = {
     onCommentAdd: PropTypes.func,
-    selectedItemId: PropTypes.number,
+    selectedItemId: PropTypes.string,
 };
 
 export default CreateComment;

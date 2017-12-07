@@ -31,7 +31,7 @@ class Items extends Component {
     }
 }
 
-Items.PropTypes = {
+Items.propTypes = {
     items: PropTypes.array,
     onItemDelete: PropTypes.func,
     onItemSelect: PropTypes.func,

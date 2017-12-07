@@ -250,6 +250,7 @@ ul, li {
                 button {
                     height: 120px;
                     font-size: $font-small;
+                    border-bottom: 1px solid $color-light-gray;
                     color: $color-white;
                     background: $color-pink;
                     @extend .abstract-button;

@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 import Comments from './Comments';
 import CreateComment from './CreateComment';
+
+import {
+    getCommentsFromLocalStorage,
+    getItemsFromLocalStorage,
+    setCommentsToLocalStorage,
+    setItemsToLocalStorage
+} from '../../localStorage';
 
 class SingleItemPage extends Component {
     state = {
@@ -27,11 +35,11 @@ class SingleItemPage extends Component {
     }
 
     fetchCommentsByItem (itemsExist, items, comments, selectedItemId) {
-        if (itemsExist.length === 0) {
+        if (_.isEmpty(itemsExist)) {
             this.props.history.push('/404');
         }
 
-        if (items && itemsExist.length !== 0) {
+        if (items && !_.isEmpty(itemsExist)) {
             this.setState({
                 items,
                 selectedItemName: itemsExist[0].text
@@ -48,8 +56,8 @@ class SingleItemPage extends Component {
     }
 
     componentDidMount() {
-        const items = JSON.parse(localStorage.getItem('items'));
-        const comments = JSON.parse(localStorage.getItem('comments'));
+        const items = getItemsFromLocalStorage();
+        const comments = getCommentsFromLocalStorage();
         const selectedItemId = this.props.match.params.id;
         
         const itemsExist = items
@@ -70,8 +78,8 @@ class SingleItemPage extends Component {
             itemId,
         });
 
-        localStorage.setItem('comments', JSON.stringify(comments));
-
+        setCommentsToLocalStorage(comments);
+        
         const newComments = comments.filter(comment => comment.itemId === selectedItemId);
         
         this.changeCommentCountInItem(newComments.length);
@@ -96,7 +104,7 @@ class SingleItemPage extends Component {
             }
             return true;
         });
-        localStorage.setItem('items', JSON.stringify(newItems));
+        setItemsToLocalStorage(newItems);
     }
 
     render() {

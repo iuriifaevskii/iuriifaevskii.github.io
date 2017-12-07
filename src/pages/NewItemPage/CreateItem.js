@@ -53,7 +53,7 @@ class CreateItem extends Component {
     }
 }
 
-CreateItem.PropTypes = {
+CreateItem.propTypes = {
     onItemAdd: PropTypes.func,
 };
 
