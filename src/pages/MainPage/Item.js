@@ -20,7 +20,7 @@ class Item extends Component {
                         className="items-title"
                         onClick={onItemSelect.bind(null, id)}
                     >
-                        <h5>{_.truncate(text, { 'length': 25 })}</h5>
+                        <h5>{_.truncate(text, { 'length': 11 })}</h5>
                     </div>
                     <div className="items-count">
                         <span>{commentCount}</span>
@@ -31,7 +31,7 @@ class Item extends Component {
                         className="items-title-second"
                         onClick={onItemSelect.bind(null, id)}
                     >
-                        <h5>{_.truncate(text, { 'length': 25 })}</h5>
+                        <h5>{_.truncate(text, { 'length': 11 })}</h5>
                     </div>
                     <div className="item-delete">
                         <button onClick={onItemDelete.bind(null, id)}>Delete</button>
