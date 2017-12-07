@@ -95,9 +95,9 @@ ul, li {
 .header {
     background: $color-dark-blue;
     color: $color-white;
-    height: 185px;
-    min-height: 185px;
-    padding: 0 25px 0 25px;
+    height: 218px;
+    min-height: 218px;
+    padding: 0 33px 0 33px;
 }
 
 .abstract-button {
@@ -116,9 +116,9 @@ ul, li {
 }
 
 .title-single-item {
-    padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 36px;
     h5 {
-        font-size: $font-small;
+        font-size: 37px;
         font-weight: 500;
         height: 120px;
         margin: auto 0;
@@ -146,19 +146,19 @@ ul, li {
         text-align: center;
         font-size: $font-large;
         text-decoration: none;
-        line-height: 53px;
-        @include circle-label($color-blue, 63px, 63px, $color-white, pointer);
+        line-height: 63px;
+        @include circle-label($color-blue, 73px, 73px, $color-white, pointer);
         &:hover {
             opacity: 0.8;
         }
     }
     h1 {
-        font-size: $font-medium;
+        font-size: 40px;
         font-weight: 500;
         line-height: 34px;
-        padding: 0px 0px 0px 20px;
-        width: -webkit-calc(100% - 63px - 20px);
-        width: calc(100% - 63px - 20px);
+        padding: 0px 0px 0px 26px;
+        width: -webkit-calc(100% - 73px);
+        width: calc(100% - 73px);
     }
 }
 
@@ -177,9 +177,9 @@ ul, li {
                 width: calc(100% - 14px);
                 display: block;
                 border-width: 0 0 1px 0;
-                border-color: #979797;
-                color: #303030;
-                padding: 7px;
+                border-color: #333333;
+                color: #333333;
+                padding: 15px;
                 font-size: $font-medium;
             }
         }
@@ -190,10 +190,10 @@ ul, li {
                 font-size: $font-medium;
                 background: none;
                 @extend .abstract-button;
-                @include circle-label($color-blue, 63px, 63px, $color-white, pointer);
+                @include circle-label($color-blue, 71px, 71px, $color-white, pointer);
                 display: block;
-                margin: 0 0 0 -webkit-calc(80px - 63px);
-                margin: 0 0 0 calc(80px - 63px);
+                margin: 0 0 0 -webkit-calc(80px - 71px);
+                margin: 0 0 0 calc(80px - 71px);
             }
         }
     }
@@ -204,10 +204,12 @@ ul, li {
     @include flexbox();
     @include flexbox-settings(column wrap, center, flex-start, flex-start);
     h1 {
-        font-size: $font-large;
+        font-size: 66px;
+        padding: 0 11px 0 11px;
     }
     h4 {
-        font-size: $font-smaller;
+        font-size: 25px;
+        padding: 0 11px 0 11px;
     }
 }
 
@@ -221,35 +223,37 @@ ul, li {
             border-bottom: 1px solid $color-light-gray;
             cursor: pointer;
             .items-title {
-                flex-basis: -webkit-calc(100% - 80px - 25px);
-                flex-basis: calc(100% - 80px - 25px);
-                -ms-flex-preferred-size: calc(100% - 80px - 25px);
-                -ms-flex-preferred-size: -webkit-calc(100% - 80px - 25px);
+                flex-basis: -webkit-calc(100% - 88px);
+                flex-basis: calc(100% - 88px);
+                -ms-flex-preferred-size: calc(100% - 88px);
+                -ms-flex-preferred-size: -webkit-calc(100% - 88px);
+                color: #2b2f3d;
                 @extend .title-single-item;
             }
             .items-title-second {
                 @extend .title-single-item;
                 @include flex(2);
+                color: #2b2f3d;
             }
             .items-count {
-                flex-basis: 80px;
-                -ms-flex-preferred-size: 80px;
+                flex-basis: 88px;
+                -ms-flex-preferred-size: 88px;
                 span {
-                    @include circle-label($color-blue, 63px, 63px, $color-white, default);
-                    font-size: $font-small;
+                    @include circle-label($color-blue, 73px, 73px, $color-white, default);
+                    font-size: 33px;
                     font-weight: 500;
                     display: block;
-                    padding: 13px 0 0 0;
+                    padding: 17px 0 0 0;
                     text-align: center;
                     cursor: pointer;
-                    margin: 0 0 0 auto;
+                    margin: 0 auto 0 0;
                 }
             }
             .item-delete {
                 @include flex(1);
                 button {
                     height: 120px;
-                    font-size: $font-small;
+                    font-size: 35px;
                     border-bottom: 1px solid $color-light-gray;
                     color: $color-white;
                     background: $color-pink;
@@ -262,9 +266,9 @@ ul, li {
     }
     .item-new {
         text-align: center;
-        margin: 35px 0 35px 0;
+        margin: 45px 0 45px 0;
         .new {
-            @include circle-label($color-pink, 84px, 84px, $color-light-pink, pointer);
+            @include circle-label($color-pink, 115px, 115px, $color-light-pink, pointer);
             display: inline-block;
             text-decoration: none;
             @extend .abstract-button;
@@ -272,8 +276,9 @@ ul, li {
             -moz-box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.4);
             box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.4);
             span {
-                font-size: $font-larger;
+                font-size: 88px;
                 font-weight: 600;
+                line-height: 115px;
             }
         }
     }
@@ -287,7 +292,7 @@ ul, li {
     min-height: 0;
     .comments {
         height: 100vh;
-        padding: 25px 0px 0px 0px;
+        padding: 20px 0px 0px 0px;
         list-style-type: none;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
@@ -295,24 +300,24 @@ ul, li {
         .comment {
             @include flexbox();
             border-bottom: 1px solid $color-light-gray;
-            padding: 25px 25px 50px 25px;
+            padding: 25px 28px 75px 28px;
             .comment-avatar {
-                flex-basis: 120px;
-                -ms-flex-preferred-size: 120px;
+                flex-basis: 143px;
+                -ms-flex-preferred-size: 143px;
                 .comment-image {
-                    width: 80px;
-                    height: 80px;
+                    width: 100px;
+                    height: 100px;
                     background: $color-blue;
                 }
             }
             .comment-text {
-                flex-basis: -webkit-calc(100% - 120px);
-                flex-basis: calc(100% - 120px);
-                -ms-flex-preferred-size: calc(100% - 120px);
-                -ms-flex-preferred-size: -webkit-calc(100% - 120px);
+                flex-basis: -webkit-calc(100% - 143px);
+                flex-basis: calc(100% - 143px);
+                -ms-flex-preferred-size: calc(100% - 143px);
+                -ms-flex-preferred-size: -webkit-calc(100% - 143px);
                 p {
-                    font-size: $font-smaller;
-                    line-height: 30px;
+                    font-size: 22px;
+                    line-height: 37px;
                     color: $color-gray;
                 }
             }
@@ -329,10 +334,10 @@ ul, li {
     }
     .comments-footer {
         background: #e7e7e7;
-        padding: 7px;
-        height: 77px;
-        min-height: 77px;
-        max-height: 77px;
+        padding: 14px 25px 14px 14px;
+        height: 110px;
+        min-height: 110px;
+        max-height: 110px;
         @include flex(1);
         form {
             @include flexbox();
@@ -342,12 +347,12 @@ ul, li {
                 -ms-flex-preferred-size: calc(100% - 80px);
                 -ms-flex-preferred-size: -webkit-calc(100% - 80px);
                 input[type="text"] {
-                    height: 63px;
-                    width: 100%;
-                    font-size: $font-smaller;
-                    padding: 12px;
+                    height: 85px;
+                    width: calc(100% - 13px);
+                    font-size: 30px;
+                    padding: 30px 17px;
                     border-radius: 2px;
-                    color: #323232;
+                    color: #333333;
                     border: 1px solid $color-light-gray;
                     overflow: auto;
                     outline: none;
@@ -360,11 +365,12 @@ ul, li {
             .btn-row {
                 -ms-flex-preferred-size: 80px;
                 flex-basis: 80px;
+                align-self: center;
                 button {
                     font-size: $font-medium;
                     background: none;
                     @extend .abstract-button;
-                    @include circle-label($color-blue, 63px, 63px, $color-white, pointer);
+                    @include circle-label($color-blue, 73px, 73px, $color-white, pointer);
                     display: block;
                     margin: 0 0 0 -webkit-calc(80px - 63px);
                     margin: 0 0 0 calc(80px - 63px);
